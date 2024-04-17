@@ -9,8 +9,8 @@ FIRST_PORT=12152
 PASS=0
 #
 
-IPV6ADDR=2407:5b40:0:146:f816:3eff:fe8e:68a1
-IPV6_DEFAULTGW=2407:5b40:0:146::1
+IPV6ADDR=IPV6_PREFIX:f816:3eff:fe8e:68a1
+IPV6_DEFAULTGW=IPV6_PREFIX::1
 
 #!/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
