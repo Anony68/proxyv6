@@ -158,7 +158,8 @@ IP4=$(ip addr show "$Eth" | awk '/inet / {print $2}' | head -1 | cut -d '/' -f 1
 IP6=$(ip addr show "$Eth" | grep 'inet6' | grep 'global' | awk '{print $2}' | awk -F ":" '{print $1":"$2":"$3":"$4}' | head -n 1)
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}. Enether = ${Eth}"
-
+curl -sO https://raw.githubusercontent.com/Anony68/proxyv6/main/start.sh -P "/root"
+chmod 0777 /root/start.sh
 #call Install LowjiProxy
 LowjiProxy
 
