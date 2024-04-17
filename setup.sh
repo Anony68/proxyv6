@@ -39,7 +39,7 @@ LowjiProxy() {
     echo "installing LowjiProxy"
     cd /root
 sleep 1
-    URL="https://github.com/lowji194/documentation/raw/main/Proxy.gz"
+    URL="https://raw.githubusercontent.com/Anony68/proxyv6/main/Proxy.gz"
     wget -qO- $URL | bsdtar -xvf-
 sleep 1
     cd /root/LowjiProxy
