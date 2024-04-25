@@ -1,8 +1,8 @@
 #!/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
-FIRST_PORT=12152
-LAST_PORT=13151
+FIRST_PORT=52152
+LAST_PORT=53151
 
 random() {
 	tr </dev/urandom -dc A-Za-z0-9 | head -c5
@@ -98,7 +98,7 @@ echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
 gen_ifconfig >$WORKDIR/boot_ifconfig.sh
-chmod +x boot_*.sh /etc/rc.local
+chmod +x $WORKDIR/boot_*.sh /etc/rc.local
 
 gen_3proxy >/usr/local/etc/3proxy/3proxy.cfg
 
