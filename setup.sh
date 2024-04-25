@@ -102,14 +102,14 @@ chmod +x $WORKDIR/boot_*.sh /etc/rc.local
 
 gen_3proxy >/usr/local/etc/3proxy/3proxy.cfg
 
-cat >>/etc/rc.local <<EOF
+cat >>/root/start.sh <<EOF
 bash ${WORKDIR}/boot_iptables.sh
 bash ${WORKDIR}/boot_ifconfig.sh
 ulimit -n 10048
 /usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg
 EOF
 
-bash /etc/rc.local
+bash /root/start.sh
 
 gen_proxy_file_for_user
 rm -rf /root/3proxy-3proxy-0.8.6
