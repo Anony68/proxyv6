@@ -18,6 +18,10 @@ gen64() {
 }
 install_3proxy() {
     echo "installing 3proxy"
+	cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+	curl -o /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/AtlasGondal/centos7-eol-repo-fix/main/CentOS-Base.repo
+	yum clean all
+	yum makecache
 	yum -y install wget gcc net-tools bsdtar zip >/dev/null
 	yum install -y wget nano htop
     URL="https://github.com/z3APA3A/3proxy/archive/3proxy-0.8.6.tar.gz"
